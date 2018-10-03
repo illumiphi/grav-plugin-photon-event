@@ -1,0 +1,7 @@
+{% extends 'article.html.twig' %}
+{% block body_template_classes %}{{ parent() }} calendar{% endblock body_template_classes %}
+
+{% block content %}
+{% include 'calendar-panel.html.twig'  %}
+{{ parent() }}
+{% endblock %}

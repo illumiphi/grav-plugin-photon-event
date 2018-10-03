@@ -1,0 +1,14 @@
+PHOTON:
+  event:
+    _label: Event Details
+    startDate: Start Date
+    endDate: End Date
+
+    address:
+      _label: Address
+      streetAddress: Street Address
+      postOfficeBoxNumber: PO Box
+      addressLocality: City
+      addressRegion: State
+      postalCode: Zip
+      addressCountry: Country

@@ -1,0 +1,24 @@
+{% set event = page.header.data.event %}
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Event",
+        "name": "{{ event.name  }}",
+        "startDate": "{{ event.startDate|date("Y-m-d H:i") }}"
+        "endDate": "{{ event.endDate|date("Y-m-d H:i") }}"
+
+        "location": {
+          "@type": "Place",
+          "name": "Event Location",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ event.address.streetAddress }}",
+            "postOfficeBoxNumber": "{{ event.address.postOfficeBoxNumber }}",
+            "addressLocality": "{{ event.address.addressLocality }}",
+            "addressRegion": "{{ event.address.addressRegion }}",
+            "postalCode": "{{ event.address.postalCode }}"
+          }
+        }
+      }
+    </script>

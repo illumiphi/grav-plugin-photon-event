@@ -1,0 +1,19 @@
+
+//default - mobile first
+
+body.event {
+
+  > main {
+    --test: none;
+  }
+
+}
+
+body.calendar {
+
+  > main {
+    // --test: none;
+    flex-flow: column;
+  }
+
+}
