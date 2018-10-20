@@ -1,44 +1,20 @@
 @charset "UTF-8";
 /* photon ✴ Event Components and Templates */
 /* articles/event *****************************/
-article.event {
-  --article-color: var(--color-fg);
-  --article-bg: var(--color-bg);
-  --article-hover-color: var(--color-bg);
-  --article-hover-bg: var(--color-fg); }
+article.event { --article-color: var(--color-fg); --article-bg: var(--color-bg); --article-hover-color: var(--color-bg); --article-hover-bg: var(--color-fg); }
 
 /* templates/event *****************************/
-body.event > main {
-  --test: none; }
+body.event > main { --test: none; }
 
-body.calendar > main {
-  flex-flow: column; }
+body.calendar > main { flex-flow: column; }
 
-section.calendar {
-  width: 100%;
-  width: auto;
-  flex-flow: column;
-  padding: 0; }
-  section.calendar #lnb-calendars,
-  section.calendar #calendarList {
-    display: flex;
-    flex-flow: row; }
-  section.calendar #menu {
-    display: flex;
-    flex-flow: column; }
-  section.calendar #menu ul {
-    list-style: none; }
-  section.calendar .dropdown {
-    display: flex;
-    flex-flow: row; }
-    section.calendar .dropdown > ul {
-      display: flex;
-      flex-flow: row; }
-  section.calendar #calendar {
-    height: 80vh;
-    /* max-height: 400px; */
-    position: relative; }
-    section.calendar #calendar > div:nth-child(2) {
-      display: none; }
+section.calendar { width: 100%; width: auto; flex-flow: column; padding: 0; }
+section.calendar #lnb-calendars, section.calendar #calendarList { display: flex; flex-flow: row; }
+section.calendar #menu { display: flex; flex-flow: column; }
+section.calendar #menu ul { list-style: none; }
+section.calendar .dropdown { display: flex; flex-flow: row; }
+section.calendar .dropdown > ul { display: flex; flex-flow: row; }
+section.calendar #calendar { height: 80vh; /* max-height: 400px; */ position: relative; }
+section.calendar #calendar > div:nth-child(2) { display: none; }
 
 /*# sourceMappingURL=event.css.map */
