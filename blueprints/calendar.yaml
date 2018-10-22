@@ -1,5 +1,5 @@
 title: Calendar
-'@extends':
+@extends:
     type: article
     context: blueprints://pages
 
@@ -8,47 +8,16 @@ form:
     tabs:
       fields:
 
-      calendar:
+        header.data.calendar:
           type: tab
           title: ✴ Calendar
+
+
+          
           fields:
-            header.content.items.@taxonomy.type:
-              type: text
-              label: Taxonomy Type
-              default: event
-            header.content.items.@taxonomy.event_repeat:
-              type: text
-              label: Repeats On
-              placeholder: "[M,T,W,R,F,S,U]"
-            header.content.items.@taxonomy.event_freq:
-              type: text
-              label: Frequency
-              placeholder: weekly
-            header.content.dateRange.start:
-              type: date
-              label: Start Date
-            header.content.dateRange.end:
-              type: date
-              label: End Date
-            header.content.order.by:
-              type: text
-              label: Order By
-              default: date
-            header.content.order.dir:
-              type: text
-              label: Order Direction
-              default: asc
-            header.content.limit:
-              type: text
-              label: limit
-              default: 0
-            header.content.pagination:
-              label: Pagination
-              type: toggle
-              highlight: 1
-              default: 0
-              options:
-                1: Enabled
-                0: Disabled
-              validate:
-                type: bool
+
+            .description:
+              type: textarea
+              label: Notes
+              help: Notes about this plugin's configuration
+              size: medium

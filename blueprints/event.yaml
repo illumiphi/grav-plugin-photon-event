@@ -7,6 +7,7 @@ form:
   fields:
     tabs:
       fields:
+        
         header.data.event:
           type: tab
           title: ✴ Event
@@ -14,11 +15,6 @@ form:
           text: Enter details for this event
 
           fields:
-
-            .dt:
-              type: section
-              title: Date & Time
-              underline: true
 
             .startDate:
               type: datetime

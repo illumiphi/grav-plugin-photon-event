@@ -1,1 +1,8 @@
-{% extends '_article/article-excerpt.html.twig' %}
+{% set excerpt = true %}
+  <article class="{{ article.template }} excerpt" data-url="{{ article.url }}">
+    {% include "_articles/_block/article_figure.html.twig" with { 'article': article } %}
+    {% include "_articles/_block/article_header.html.twig" with { 'article': article } %}
+    {% include "_articles/_block/article_main_excerpt.html.twig" with { 'article': article } %}
+    {% include "_articles/_block/article_footer.html.twig" with { 'article': article } %}
+    <!-- user/themes/photon/templates/{{ _self.getTemplateName()  }} -->
+  </article>

@@ -1,7 +1,24 @@
 {% extends 'article.html.twig' %}
 {% block body_template_classes %}{{ parent() }} calendar{% endblock body_template_classes %}
+{% block template %}
+{{ parent() }}
+<!-- user/plugins/photon-event/templates/calendar.html.twig -->
+{% endblock %}
 
 {% block content %}
-{% include 'calendar-panel.html.twig'  %}
 {{ parent() }}
+<script type="text/javascript">
+var events = [
+  {% for article in page.collection %}
+    {% if not (article.url == page.url) and article.routable == true %}
+    {
+      title: "{{ article.title }}",
+      start: "{{ article.date|date("Y-m-d") }}",
+      end: "{{ article.date|date("Y-m-d") }}",
+      url: "{{ article.url }}"
+    },
+    {% endif %}
+  {% endfor %}
+  ];
+</script>
 {% endblock %}

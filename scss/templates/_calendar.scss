@@ -1,0 +1,17 @@
+
+//default - mobile first
+
+
+body.calendar {
+
+  #calendar {
+    display: block;
+    background: var(--color-bg)
+
+  }
+  > main {
+    // --test: none;
+    // flex-flow: column;
+  }
+
+}

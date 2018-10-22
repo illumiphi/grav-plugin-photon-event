@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* photon ✴ Event Components and Templates */
+/* articles/calendar *****************************/
+article.calendar > figure { background: white; }
+article.calendar > figure .fc-event-container a { background: var(--color-2); color: var(--color-2-lighter); }
+article.calendar > figure .fc-event-container a:hover { color: var(--color-2); background: var(--color-2-lighter); }
+
+/* templates/calendar *****************************/
+body.calendar #calendar { display: block; background: var(--color-bg); }
+
+/*# sourceMappingURL=calendar.css.map */

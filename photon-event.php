@@ -80,35 +80,59 @@ class PhotonEventPlugin extends Plugin
       $assets = 		$this->grav['assets'];
 
       // only load the vars if this datatype page
+      if ($page->template() == 'event')
+      {
+
+        // styles
+        if ($this->config->get('plugins.photon-event.built_in_css')) {
+
+          $css = 'plugin://photon-event/assets/event.css';
+          $assets->addCss( $css, 100, false, 'photon-plugins' );
+
+        }
+
+        // scripts
+        if ($this->config->get('plugins.photon-event.built_in_js')) {
+
+          $js = 'plugin://photon-event/assets/event.js';
+          $assets->addJs($js, 100, false, 'defer', 'photon-plugins' );
+
+        }
+      }
+
+      // <link href='../fullcalendar.min.css' rel='stylesheet' />
+      // <link href='../fullcalendar.print.min.css' rel='stylesheet' media='print' />
+      // <script src='../lib/moment.min.js'></script>
+      // <script src='../lib/jquery.min.js'></script>
+      // <script src='../fullcalendar.min.js'></script>
+
       if ($page->template() == 'calendar')
       {
 
         // styles
         if ($this->config->get('plugins.photon-event.built_in_css')) {
-          $css = 'plugin://photon-event/assets/tui/tui-calendar.css';
+
+          $css = 'plugin://photon-event/assets/fullcalendar-3.9.0/fullcalendar.css';
           $assets->addCss( $css, 300 );
-          $css = 'plugin://photon-event/assets/css/default.css';
-          $assets->addCss( $css, 250 );
-          $css = 'plugin://photon-event/assets/css/icons.css';
-          $assets->addCss( $css, 250 );
-          $css = 'plugin://photon-event/assets/event.css';
-          $assets->addCss( $css, 200 );
+          // $css = 'plugin://photon-event/assets/fullcalendar-3.9.0/fullcalendar.print.min.css';
+          // $assets->addCss( $css, 300 );
+
+          $css = 'plugin://photon-event/assets/calendar.css';
+          $assets->addCss( $css, 100, false, 'photon-plugins' );
+
         }
 
         // scripts
         if ($this->config->get('plugins.photon-event.built_in_js')) {
-          $js = 'plugin://photon-event/assets/tui/tui-calendar.js';
+
+          $js = 'plugin://photon-event/assets/fullcalendar-3.9.0/lib/moment.min.js';
           $assets->addJs( $js, 300, false, 'defer' ); //, {'priority':500, 'loading':'defer'}
-          $js = 'plugin://photon-event/assets/data/calendars.js';
+          $js = 'plugin://photon-event/assets/fullcalendar-3.9.0/fullcalendar.js';
           $assets->addJs( $js, 250, false, 'defer' );
-          $js = 'plugin://photon-event/assets/data/schedules.js';
-          $assets->addJs( $js, 250, false, 'defer' );
+
           $js = 'plugin://photon-event/assets/calendar.js';
-          $assets->addJs( $js, 200, false, 'defer' );
-          $js = 'plugin://photon-event/assets/event.js';
-          $assets->addJs( $js, 101, false, 'defer' );
-          $js = 'plugin://photon-event/assets/theme/dooray.js';
-          $assets->addJs( $js, 101, false, 'defer' );
+          $assets->addJs($js, 100, false, 'defer', 'photon-plugins' );
+
 
         }
       }
