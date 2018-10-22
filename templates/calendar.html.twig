@@ -13,9 +13,10 @@ var events = [
     {% if not (article.url == page.url) and article.routable == true %}
     {
       title: "{{ article.title }}",
-      start: "{{ article.date|date("Y-m-d") }}",
-      end: "{{ article.date|date("Y-m-d") }}",
-      url: "{{ article.url }}"
+      start: "{{ article.header.data.event.startDate|date("Y-m-d\\Th:i") }}",
+      end: "{{ article.header.data.event.endDate|date("Y-m-d\\Th:i") }}",
+      url: "{{ article.url }}",
+      className: ""
     },
     {% endif %}
   {% endfor %}
