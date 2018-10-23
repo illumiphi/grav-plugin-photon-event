@@ -10,11 +10,15 @@
 <script type="text/javascript">
 var events = [
   {% for article in page.collection %}
-    {% if not (article.url == page.url) and article.routable == true %}
+    {% set startDate = article.header.data.event.startDate %}
+    {% set endDate = article.header.data.event.endDate %}
+    {% if startDate %}
     {
       title: "{{ article.title }}",
-      start: "{{ article.header.data.event.startDate|date("Y-m-d\\Th:i") }}",
-      end: "{{ article.header.data.event.endDate|date("Y-m-d\\Th:i") }}",
+      start: "{{ startDate|date("Y-m-d\\Th:i") }}",
+      {% if endDate %}
+      end: "{{ endDate|date("Y-m-d\\Th:i") }}",
+      {% endif %}
       url: "{{ article.url }}",
       className: ""
     },
