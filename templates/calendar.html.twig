@@ -15,9 +15,9 @@ var events = [
     {% if startDate %}
     {
       title: "{{ article.title }}",
-      start: "{{ startDate|date("Y-m-d\\Th:i") }}",
+      start: "{{ startDate|date("Y-m-d\\TH:i") }}",
       {% if endDate %}
-      end: "{{ endDate|date("Y-m-d\\Th:i") }}",
+      end: "{{ endDate|date("Y-m-d\\TH:i") }}",
       {% endif %}
       url: "{{ article.url }}",
       className: ""
