@@ -7,7 +7,7 @@ form:
   fields:
     tabs:
       fields:
-        
+
         header.data.event:
           type: tab
           title: ✴ Event
@@ -29,6 +29,19 @@ form:
               help: Use the date selector to enter an end date and time for this event.
               validate:
                 type: required
+
+
+            header.data.event.allDay:
+              type: toggle
+              label: All Day event
+              help: does the event last all day?
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              default: 0
+              validate:
+                type: bool
+
 
 
             header.data.event.address:

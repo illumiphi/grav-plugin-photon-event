@@ -1,5 +1,6 @@
 {% extends 'article.html.twig' %}
 {% set type = "event" %}
+{% set types = "events" %}
 {% block template %}
 {{ parent() }}
 <!-- user/plugins/photon-{{ type }}/templates/{{ type }}.html.twig -->
@@ -8,5 +9,5 @@
 
 {% block schema %}
 {{ parent() }}
-{% include '_json-ld/' ~ type ~ '.html.twig' ignore missing %}
+{% include '_json-ld/event.html.twig' ignore missing %}
 {% endblock schema %}
