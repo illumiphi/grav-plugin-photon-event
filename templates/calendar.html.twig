@@ -1,5 +1,7 @@
 {% extends 'article.html.twig' %}
 {% set type = "calendar" %}
+{% set types = "events" %}
+
 {% block template %}
 {{ parent() }}
 <!-- user/plugins/photon-{{ type }}/templates/{{ type }}.html.twig -->
@@ -18,10 +20,14 @@ var events = [
   {% for article in page.collection %}
     {% set startDate = article.header.data.event.startDate %}
     {% set endDate = article.header.data.event.endDate %}
+    {% set allDay = article.header.data.event.allDay %}
     {% if startDate %}
     {
       title: "{{ article.title }}",
       start: "{{ startDate|date("Y-m-d\\TH:i") }}",
+      {% if allDay %}
+      allDay: true,
+      {% endif %}
       {% if endDate %}
       end: "{{ endDate|date("Y-m-d\\TH:i") }}",
       {% endif %}
