@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* photon ✴ Event Components and Templates */
 /* articles/calendar *****************************/
-article.calendar > figure { background: white; }
+article.calendar > figure { background: white; width: 100%; max-width: 54em; max-height: none; margin: 0 auto; }
 article.calendar > figure .fc-event-container a { background: var(--color-2); color: var(--color-2-lighter); }
 article.calendar > figure .fc-event-container a:hover { color: var(--color-2); background: var(--color-2-lighter); }
 

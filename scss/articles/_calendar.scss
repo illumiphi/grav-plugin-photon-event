@@ -11,7 +11,11 @@ article.calendar {
   // --article-hover-bg: var(--color-fg);
   > figure {
     background: white;
-
+    width: 100%;
+    max-width: 54em;
+    max-height: none;
+    margin: 0 auto;
+    
     .fc-event-container a {
       background: var(--color-2);
       color: var(--color-2-lighter);
