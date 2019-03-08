@@ -12,7 +12,7 @@ $(document).ready(function() {
     minTime: "06:00:00",
     scrollTime: "09:00:00",
     slotDuration: "01:00:00",
-    defaultView: "listMonth",
+    defaultView: "month",
     eventLimit: true, // allow "more" link when too many events
     events: events
   });
