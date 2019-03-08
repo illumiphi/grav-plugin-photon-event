@@ -13,29 +13,49 @@
 {% include '_json-ld/' ~ type ~ '.html.twig' ignore missing  %}
 {% endblock schema %}
 
-{% block content %}
-{{ parent() }}
-<script type="text/javascript">
-var events = [
-  {% for article in page.collection %}
-    {% set startDate = article.header.data.event.startDate %}
-    {% set endDate = article.header.data.event.endDate %}
-    {% set allDay = article.header.data.event.allDay %}
-    {% if startDate %}
-    {
-      title: "{{ article.title }}",
-      start: "{{ startDate|date("Y-m-d\\TH:i") }}",
-      {% if allDay %}
-      allDay: true,
+{% set options = {  'order': {'by': 'header.data.event.startDate', 'dir': 'desc'} } %}
+
+{% set events = page.collection(options) %}
+{% set events = page.collection %}
+
+{% block collection %}
+  <section class="collection">
+    <header>
+      <h1>{{ types }}: <span class="count">{{ events.count() }}</span></h1>
+    </header>
+    {% for article in events %}
+      {# % if not (article.url == page.url) and article.routable == true and article.visible == true % #}
+        {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
+      {# % endif % #}
+    {% endfor %}
+
+    {% include '_sections/pagination.html.twig'   %}
+  </section>
+  <script type="text/javascript">
+  var events = [
+    {% for article in events %}
+      {% set startDate = article.header.data.event.startDate %}
+      {% set endDate = article.header.data.event.endDate %}
+      {% set allDay = article.header.data.event.allDay %}
+      {% if startDate %}
+      {
+        title: "{{ article.title }}",
+        start: "{{ startDate|date("Y-m-d\\TH:i") }}",
+        {% if allDay %}
+        allDay: true,
+        {% endif %}
+        {% if endDate %}
+        end: "{{ endDate|date("Y-m-d\\TH:i") }}",
+        {% endif %}
+        url: "{{ article.url }}",
+        className: ""
+      },
       {% endif %}
-      {% if endDate %}
-      end: "{{ endDate|date("Y-m-d\\TH:i") }}",
-      {% endif %}
-      url: "{{ article.url }}",
-      className: ""
-    },
-    {% endif %}
-  {% endfor %}
-  ];
-</script>
-{% endblock %}
+    {% endfor %}
+    ];
+  </script>
+
+{% endblock collection %}
+
+{% block calendar %}
+{% endblock calendar %}

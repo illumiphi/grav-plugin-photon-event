@@ -11,7 +11,7 @@
       {%- endif %}
     </h1>
     {% if article.header.data.event.startDate %}
-    <h2>{{ article.header.data.event.startDate|date("D, M d, Y @ H:I") }}</h2>
+    <h2>{{ article.header.data.event.startDate|date("D, M d, Y @ g:i A") }}</h2>
     {% endif %}
     {% if article.header.subtitle %}
     <h2>{{ article.header.subtitle }}</h2>

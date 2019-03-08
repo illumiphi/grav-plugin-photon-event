@@ -12,3 +12,7 @@ PHOTON:
       addressRegion: State
       postalCode: Zip
       addressCountry: Country
+
+  days:
+    Mon: Monday
+    Tue: Tuesday

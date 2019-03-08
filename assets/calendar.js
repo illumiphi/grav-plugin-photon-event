@@ -4,7 +4,7 @@ $(document).ready(function() {
     header: {
       left: 'prev,next today',
       center: 'title',
-      right: 'month,agendaWeek,agendaDay,listWeek'
+      right: 'month,agendaWeek,agendaDay,listMonth'
     },
     // defaultDate: '2018-11-12',
     navLinks: true, // can click day/week names to navigate views
