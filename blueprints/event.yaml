@@ -18,22 +18,21 @@ form:
 
             .startDate:
               type: datetime
-              label: Start
+              label: PHOTON.event.startDate
               help: Use the date selector to enter a start date and time for this event.
               validate:
                 type: required
 
             .endDate:
               type: datetime
-              label: End
+              label: PHOTON.event.endDate
               help: Use the date selector to enter an end date and time for this event.
               validate:
                 type: required
 
-
-            header.data.event.allDay:
+            .allDay:
               type: toggle
-              label: All Day event
+              label: PHOTON.event.allDay
               help: does the event last all day?
               options:
                 1: PLUGIN_ADMIN.YES
@@ -44,7 +43,7 @@ form:
 
 
 
-            header.data.event.address:
+            .address:
               # https://schema.org/PostalAddress
               type: section
               title: Address

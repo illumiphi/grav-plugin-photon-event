@@ -4,9 +4,10 @@
       {
         "@context": "http://schema.org",
         "@type": "Event",
-        "name": "{{ event.name  }}",
-        "startDate": "{{ event.startDate|date("Y-m-d H:i") }}"
-        "endDate": "{{ event.endDate|date("Y-m-d H:i") }}"
+        "name": "{{ page.title  }}",
+        "description": "{{ page.summary }}",
+        "startDate": "{{ event.startDate|date("Y-m-d H:i") }}",
+        "endDate": "{{ event.endDate|date("Y-m-d H:i") }}",
 
         "location": {
           "@type": "Place",

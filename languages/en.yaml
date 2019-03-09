@@ -1,8 +1,9 @@
 PHOTON:
   event:
     _label: Event Details
-    startDate: Start Date
-    endDate: End Date
+    startDate: Start Date & Time
+    endDate: End Date & Time
+    allDay: All Day Event
 
     address:
       _label: Address
