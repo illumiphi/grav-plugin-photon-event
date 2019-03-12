@@ -13,9 +13,6 @@
 {% include '_json-ld/' ~ type ~ '.html.twig' ignore missing  %}
 {% endblock schema %}
 
-{% set options = {  'order': {'by': 'header.data.event.startDate', 'dir': 'desc'} } %}
-
-{% set events = page.collection(options) %}
 {% set events = page.collection %}
 
 {% block collection %}
@@ -56,6 +53,3 @@
   </script>
 
 {% endblock collection %}
-
-{% block calendar %}
-{% endblock calendar %}
