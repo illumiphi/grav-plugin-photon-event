@@ -21,9 +21,10 @@
       <h1>{{ types }}: <span class="count">{{ events.count() }}</span></h1>
     </header>
     {% for article in events %}
-      {# % if not (article.url == page.url) and article.routable == true and article.visible == true % #}
+
+      {%  if article.routable == true and article.visible == true  %}
         {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
-      {# % endif % #}
+      {%  endif  %}
     {% endfor %}
 
     {% include '_sections/pagination.html.twig'   %}
@@ -31,22 +32,24 @@
   <script type="text/javascript">
   var events = [
     {% for article in events %}
-      {% set startDate = article.header.data.event.startDate %}
-      {% set endDate = article.header.data.event.endDate %}
-      {% set allDay = article.header.data.event.allDay %}
-      {% if startDate %}
-      {
-        title: "{{ article.title }}",
-        start: "{{ startDate|date("Y-m-d\\TH:i") }}",
-        {% if allDay %}
-        allDay: true,
+      {%  if article.routable == true and article.visible == true  %}
+        {% set startDate = article.header.data.event.startDate %}
+        {% set endDate = article.header.data.event.endDate %}
+        {% set allDay = article.header.data.event.allDay %}
+        {% if startDate %}
+        {
+          title: "{{ article.title }}",
+          start: "{{ startDate|date("Y-m-d\\TH:i") }}",
+          {% if allDay %}
+          allDay: true,
+          {% endif %}
+          {% if endDate %}
+          end: "{{ endDate|date("Y-m-d\\TH:i") }}",
+          {% endif %}
+          url: "{{ article.url }}",
+          className: ""
+        },
         {% endif %}
-        {% if endDate %}
-        end: "{{ endDate|date("Y-m-d\\TH:i") }}",
-        {% endif %}
-        url: "{{ article.url }}",
-        className: ""
-      },
       {% endif %}
     {% endfor %}
     ];
