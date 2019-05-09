@@ -22,9 +22,9 @@
     </header>
     {% for article in events %}
 
-      {%  if article.routable == true and article.visible == true  %}
+      {# %  if article.routable == true and article.visible == true  % #}
         {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
-      {%  endif  %}
+      {# %  endif  % #}
     {% endfor %}
 
     {% include '_sections/pagination.html.twig'   %}
@@ -32,7 +32,7 @@
   <script type="text/javascript">
   var events = [
     {% for article in events %}
-      {%  if article.routable == true and article.visible == true  %}
+      {# %  if article.routable == true and article.visible == true  % #}
         {% set startDate = article.header.data.event.startDate %}
         {% set endDate = article.header.data.event.endDate %}
         {% set allDay = article.header.data.event.allDay %}
@@ -50,7 +50,7 @@
           className: ""
         },
         {% endif %}
-      {% endif %}
+      {# % endif % #}
     {% endfor %}
     ];
   </script>
