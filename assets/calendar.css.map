@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": ";AAAA,6CAA6C;AAI7C,mDAAmD;ACOjD,yBAAS,GACP,UAAU,EAAE,KAAK,EACjB,KAAK,EAAE,IAAI,EACX,SAAS,EAAE,IAAI,EACf,UAAU,EAAE,IAAI,EAChB,MAAM,EAAE,QAAQ;AAEhB,+CAAsB,GACpB,UAAU,EAAE,cAAc,EAC1B,KAAK,EAAE,sBAAsB;AAC7B,qDAAQ,GACN,KAAK,EAAE,cAAc,EACrB,UAAU,EAAE,sBAAsB;;ADjB1C,oDAAoD;AEAlD,uBAAU,GACR,OAAO,EAAE,KAAK,EACd,UAAU,EAAE,eAEd",
-"sources": ["../scss/calendar.scss","../scss/articles/_calendar.scss","../scss/templates/_calendar.scss"],
-"names": [],
-"file": "calendar.css"
-}
+{"version":3,"sourceRoot":"","sources":["../scss/calendar.scss","../scss/articles/_calendar.scss","../scss/templates/_calendar.scss"],"names":[],"mappings":";AAAA;AAIA;ACOE;EACE;EACA;EACA;EACA;EACA;EAEA;;AAEA;EACE;EACA;;AACA;EACE;EACA;;;ADnBR;AEAE;EACE;EACA","file":"calendar.css"}

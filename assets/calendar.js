@@ -8,10 +8,10 @@ $(document).ready(function() {
     },
     businessHours: {
       // days of week. an array of zero-based day of week integers (0=Sunday)
-      dow: [ 0, 1, 2, 5, 6 ], // Monday - Thursday
+      dow: [ 0, 1, 2, 3, 4, 5, 6 ], // Monday - Thursday
 
-      start: '16:00', // a start time (10am in this example)
-      end: '20:30', // an end time (6pm in this example)
+      start: '10:00', // a start time (10am in this example)
+      end: '16:30', // an end time (6pm in this example)
     },
     // defaultDate: '2018-11-12',
     navLinks: true, // can click day/week names to navigate views

@@ -16,6 +16,8 @@ article.calendar {
     max-height: none;
     margin: 1em auto;
 
+    display: block;
+    
     .fc-event-container a {
       background: var(--color-2);
       color: var(--color-2-lighter);
