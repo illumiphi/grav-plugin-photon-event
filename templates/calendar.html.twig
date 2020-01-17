@@ -15,11 +15,26 @@
 
 {% set events = page.collection %}
 
+{# TODO this is a copy from article - remove #}
 {% block collection %}
   <section class="collection">
     <header>
-      <h1>{{ types }}: <span class="count">{{ events.count() }}</span></h1>
-    </header>
+        <h1>{{ page.header.collection.name }}{% if page.header.collection.showCount %} : <span class="count">{{ page.collection.count() }}</span>{% endif %}</h1>
+        {% if page.header.collection.showMenu %}
+        <nav>
+          {# placeholder functions for filter taxonomy items in current collection #}
+          {%- set active_class = (page.active or page.activeChild) ? ' class="active"' : '' %}
+          {% for tag in page.taxonomy.tag %}
+              <!-- <a href="search/tag:{{ tag }}">{{ tag }}</a> -->
+          {% endfor %}
+
+          <!-- <a id="all" href="{{ page.url }}">all</a>
+          <a id="tag-featured" href="{{ page.url }}{{ page.url ends with '/' ? '' : '/' }}tag:featured">featured</a>
+          <a id="tag-showcase" href="{{ page.url }}{{ page.url ends with '/' ? '' : '/' }}tag:showcase">showcase</a> -->
+          <a id="modal" href="javascript:toggleModal();">[ ]</a>
+        </nav>
+        {% endif %}
+      </header>
     {% for article in events %}
 
       {# %  if article.routable == true and article.visible == true  % #}
