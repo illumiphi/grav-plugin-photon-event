@@ -1,25 +1,30 @@
 {% set event = page.header.data.event %}
-
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "Event",
-        "name": "{{ page.title  }}",
-        "description": "{{ page.summary }}",
-        "startDate": "{{ event.startDate|date("Y-m-d H:i") }}",
-        "endDate": "{{ event.endDate|date("Y-m-d H:i") }}",
-
-        "location": {
-          "@type": "Place",
-          "name": "Event Location",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "{{ event.address.streetAddress }}",
-            "postOfficeBoxNumber": "{{ event.address.postOfficeBoxNumber }}",
-            "addressLocality": "{{ event.address.addressLocality }}",
-            "addressRegion": "{{ event.address.addressRegion }}",
-            "postalCode": "{{ event.address.postalCode }}"
-          }
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Event",
+      "name": "{{ page.title  }}",
+      "description": "{{ page.summary }}",
+      "startDate": "{{ event.startDate|date("Y-m-d H:i") }}",
+      {% if event.endDate -%}
+      "endDate": "{{ event.endDate|date("Y-m-d H:i") }}",
+      {% endif -%}
+      "location": {
+        "@type": "Place",
+        "name": "{{ event.location.name }}",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "{{ event.location.geo.latitude }}",
+          "longitude": "{{ event.location.geo.longitude }}"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ event.location.address.streetAddress }}",
+          "postOfficeBoxNumber": "{{ event.location.address.postOfficeBoxNumber }}",
+          "addressLocality": "{{ event.location.address.addressLocality }}",
+          "addressRegion": "{{ event.location.address.addressRegion }}",
+          "postalCode": "{{ event.location.address.postalCode }}"
         }
       }
-    </script>
+    }
+  </script>
