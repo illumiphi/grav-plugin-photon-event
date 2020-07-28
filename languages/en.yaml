@@ -5,14 +5,21 @@ PHOTON:
     endDate: End Date & Time
     allDay: All Day Event
 
-    address:
-      _label: Address
-      streetAddress: Street Address
-      postOfficeBoxNumber: PO Box
-      addressLocality: City
-      addressRegion: State
-      postalCode: Zip
-      addressCountry: Country
+    location:
+        _label: Place
+        name: Name
+        address:
+            _label: Address
+            streetAddress: Street
+            postOfficeBoxNumber: PO Box
+            addressLocality: City
+            addressRegion: State
+            postalCode: Zip
+            addressCountry: Country
+        geo:
+            _label: Geo Coordinates
+            latitude: Latitude
+            longitude: Longitude
 
   days:
     Mon: Monday
