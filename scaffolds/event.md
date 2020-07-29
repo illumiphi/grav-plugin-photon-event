@@ -18,8 +18,10 @@ content:
     items: '@self.children'
 child_type: post
 taxonomy:
-    category: [ ${categories} ]
-    tag: [ ${tags} ]
+    category: 
+        - ${category}
+    tag: 
+        - ${tag}
 show_gallery: false
 date: ${post_date}
 data:
