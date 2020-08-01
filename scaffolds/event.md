@@ -1,29 +1,29 @@
 % name: Event
 % folder: event
-% def: author='/about'
 % def: post_date=$(date +%Y-%m-%d)
-% def: collection_name='Posts'
+% def: author='/about'
+% def: collection_name='Attachments'
 % def: start_dt=$(date +%Y-%m-%d)
 % def: end_dt=$(date +%Y-%m-%d)
 % def: all_day=true
 ---
 title: ${title}
 subtitle: ${subtitle}
+date: ${post_date}
 author: ${author}
-collection:
-    name: ${collection_name}
-    showCount: true
-    showMenu: true
+sets:
+    default:
+        name: ${collection_name}
+        showCount: true
+        showMenu: true
 content:
     items: '@self.children'
-child_type: post
 taxonomy:
     category: 
         - ${category}
     tag: 
         - ${tag}
 show_gallery: false
-date: ${post_date}
 data:
     event:
         '@type': Event
