@@ -112,7 +112,7 @@ class PhotonEventPlugin extends Plugin
         // styles
         if ($this->config->get('plugins.photon-event.built_in_css')) {
 
-          $css = 'plugin://photon-event/assets/fullcalendar-5.2.0/lib/main.css';
+          $css = 'plugin://photon-event/assets/fc-photon.css';
           $assets->addCss( $css, 300 );
           // $css = 'plugin://photon-event/assets/fullcalendar-3.9.0/fullcalendar.print.min.css';
           // $assets->addCss( $css, 300 );
