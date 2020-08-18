@@ -1,27 +1,28 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
+  // var calendarEl = document.getElementById('calendar');
+  var figure = document.querySelector('main > article > figure')
 
-  $('main > article > figure').fullCalendar({
-    header: {
+  var calendar = new FullCalendar.Calendar(figure, {
+    headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'month,agendaWeek,agendaDay,listMonth'
+      right: 'listMonth,dayGridMonth'
     },
     businessHours: {
       // days of week. an array of zero-based day of week integers (0=Sunday)
-      dow: [ 0, 1, 2, 3, 4, 5, 6 ], // Monday - Thursday
+      dow: [ 1, 2, 3, 4, 5 ], // Monday - Thursday
 
       start: '10:00', // a start time (10am in this example)
       end: '16:30', // an end time (6pm in this example)
     },
-    // defaultDate: '2018-11-12',
-    navLinks: true, // can click day/week names to navigate views
+    // initialDate: '2020-06-12',
     editable: false,
-    minTime: "09:00:00",
-    scrollTime: "23:00:00",
-    slotDuration: "01:00:00",
-    defaultView: "month",
-    eventLimit: true, // allow "more" link when too many events
+    navLinks: true, // can click day/week names to navigate views
+    dayMaxEvents: true, // allow "more" link when too many events
+    initialView: "listMonth",
     events: events
   });
 
+  calendar.render();
 });
+
