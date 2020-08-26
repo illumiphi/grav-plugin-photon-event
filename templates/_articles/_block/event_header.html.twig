@@ -9,11 +9,10 @@
             <a href="{{ article.url }}">{{ article.title }}</a>
 {% endif %}
           </h1>
-{% if article.header.data.event.startDate %}
-          <h2>{{ article.header.data.event.startDate|date("l, F d, Y @ g:i A") }}</h2>
-{% endif %}
 {% if article.header.subtitle %}
           <h2>{{ article.header.subtitle }}</h2>
 {% endif %}
-          <time title="{{ article.date|date("Y-m-d") }}" datetime="{{ article.date|date("Y-m-d") }}">{{ article.date|date("M d Y") }}</time>
+{% if article.header.data.event.startDate %}
+          <h2>{{ article.header.data.event.startDate|date("l, F d, Y @ g:i A") }}</h2>
+{% endif %}
         </header>

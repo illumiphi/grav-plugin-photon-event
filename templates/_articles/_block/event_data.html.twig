@@ -1,0 +1,37 @@
+{% set event = page.header.data.event %}
+{% if event %}
+        <aside class="data">
+          <h1>{{ t('PHOTON.event') }}</h1>
+          <dl>
+{%   if event.startDate  %}
+              <dt>{{ t('PHOTON.event.startDate') }}</dt>
+              <dd>
+                <time datetime=""{{ event.startDate|date }}>
+                  <div>{{ event.startDate|date("l,") }}</div>
+                  <div>{{ event.startDate|date("F d, Y") }}</div>
+                  <div>{{ event.startDate|date("g:i A") }}</div>
+                </time>
+              </dd>
+{%   endif %}
+{%   if event.endDate  %}
+              <dt>{{ t('PHOTON.event.endDate') }}</dt>
+              <dd>{{ event.endDate|date("l, F d, Y @ g:i A") }}</dd>
+{%   endif %}
+{%   if event.location  %}
+              <dt>{{ t('PHOTON.event.location') }}</dt>
+              <dd>
+                <address>
+{%     if event.location.name  %}
+                  <div>{{ event.location.name }}</div>
+{%     endif %}
+{%     if event.location.address.addressLocality  %}
+                  <div>{{ event.location.address.addressLocality }}, {{ event.location.address.addressRegion }}</div>
+{%     endif %}
+                </addredss>
+              </dd>
+{%   endif %}
+          </dl>
+        </aside>
+{% else %}
+        <!-- no data -->
+{% endif %}

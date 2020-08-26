@@ -1,8 +1,8 @@
 PHOTON:
   event:
     _label: Event Details
-    startDate: Start Date & Time
-    endDate: End Date & Time
+    startDate: Start
+    endDate: End
     allDay: All Day Event
 
     location:
@@ -20,7 +20,3 @@ PHOTON:
             _label: Geo Coordinates
             latitude: Latitude
             longitude: Longitude
-
-  days:
-    Mon: Monday
-    Tue: Tuesday
