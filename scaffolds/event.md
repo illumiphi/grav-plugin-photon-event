@@ -45,5 +45,6 @@ data:
                 longitude:  ${place_long} 
 ---
 
-- The regular monthly meeting of the Port of Alsea Board of Commissioners will be held on ${start_dt_long} via teleconference
+${summary}
+
 ===
