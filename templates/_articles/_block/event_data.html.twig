@@ -4,31 +4,43 @@
           <h1>{{ t('PHOTON.event') }}</h1>
           <dl>
 {%   if event.startDate  %}
-              <dt>{{ t('PHOTON.event.startDate') }}</dt>
-              <dd>
-                <time datetime=""{{ event.startDate|date }}>
-                  <div>{{ event.startDate|date("l,") }}</div>
-                  <div>{{ event.startDate|date("F d, Y") }}</div>
-                  <div>{{ event.startDate|date("g:i A") }}</div>
-                </time>
-              </dd>
+            <dt>{{ t('PHOTON.event.startDate') }}</dt>
+            <dd>
+              <time datetime=""{{ event.startDate|date }}>
+                <div>{{ event.startDate|date("l,") }}</div>
+                <div>{{ event.startDate|date("F d, Y") }}</div>
+                <div>{{ event.startDate|date("g:i A") }}</div>
+              </time>
+            </dd>
 {%   endif %}
 {%   if event.endDate  %}
-              <dt>{{ t('PHOTON.event.endDate') }}</dt>
-              <dd>{{ event.endDate|date("l, F d, Y @ g:i A") }}</dd>
+            <dt>{{ t('PHOTON.event.endDate') }}</dt>
+            <dd>{{ event.endDate|date("l, F d, Y @ g:i A") }}</dd>
 {%   endif %}
 {%   if event.location  %}
-              <dt>{{ t('PHOTON.event.location') }}</dt>
-              <dd>
-                <address>
+            <dt>{{ t('PHOTON.event.location') }}</dt>
+            <dd>
+              <address>
 {%     if event.location.name  %}
-                  <div>{{ event.location.name }}</div>
+                <div>{{ event.location.name }}</div>
 {%     endif %}
 {%     if event.location.address.addressLocality  %}
-                  <div>{{ event.location.address.addressLocality }}, {{ event.location.address.addressRegion }}</div>
+                <div>{{ event.location.address.addressLocality }}, {{ event.location.address.addressRegion }}</div>
 {%     endif %}
-                </addredss>
-              </dd>
+              </addredss>
+            </dd>
+{%   endif %}
+{%   if article.header.date %}
+            <dt>Posted</dt>
+            <dd><time title="{{ article.date|date("F d, Y") }}" datetime="{{ article.date|date("Y-m-d") }}">{{ article.date|nicetime() }}</time></dd>
+{%   endif %}
+{%   if article.header.author %}
+            <dt>By</dt>
+            <dd>{{ article.header.author }}</dd>
+{%   endif %}
+{%   if article.header.date %}
+            <dt>Modified</dt>
+            <dd><time title="{{ article.modified|date("F d, Y") }}" datetime="{{ article.modified|date("Y-m-d") }}">{{ article.modified|nicetime() }}</time></dd>
 {%   endif %}
           </dl>
         </aside>
