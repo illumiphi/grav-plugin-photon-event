@@ -80,25 +80,25 @@ class PhotonEventPlugin extends Plugin
       $assets = 		$this->grav['assets'];
 
       // only load the vars if this datatype page
-      if ($page->template() == 'event')
-      {
+      // if ($page->template() == 'event')
+      // {
 
         // styles
-        if ($this->config->get('plugins.photon-event.built_in_css')) {
+        // if ($this->config->get('plugins.photon-event.built_in_css')) {
 
           $css = 'plugin://photon-event/assets/event.css';
           $assets->addCss( $css, 100, false, 'photon-plugins' );
 
-        }
+        // }
 
         // scripts
-        if ($this->config->get('plugins.photon-event.built_in_js')) {
+        // if ($this->config->get('plugins.photon-event.built_in_js')) {
 
           $js = 'plugin://photon-event/assets/event.js';
           $assets->addJs($js, 100, false, 'defer', 'photon-plugins' );
 
-        }
-      }
+        // }
+      // }
 
       // <link href='../fullcalendar.min.css' rel='stylesheet' />
       // <link href='../fullcalendar.print.min.css' rel='stylesheet' media='print' />
@@ -106,11 +106,11 @@ class PhotonEventPlugin extends Plugin
       // <script src='../lib/jquery.min.js'></script>
       // <script src='../fullcalendar.min.js'></script>
 
-      if ($page->template() == 'calendar')
-      {
+      // if ($page->template() == 'calendar')
+      // {
 
         // styles
-        if ($this->config->get('plugins.photon-event.built_in_css')) {
+        // if ($this->config->get('plugins.photon-event.built_in_css')) {
 
           $css = 'plugin://photon-event/assets/fc-photon.css';
           $assets->addCss( $css, 300 );
@@ -120,10 +120,10 @@ class PhotonEventPlugin extends Plugin
           $css = 'plugin://photon-event/assets/calendar.css';
           $assets->addCss( $css, 100, false, 'photon-plugins' );
 
-        }
+        // }
 
         // scripts
-        if ($this->config->get('plugins.photon-event.built_in_js')) {
+        // if ($this->config->get('plugins.photon-event.built_in_js')) {
 
           // $js = 'plugin://photon-event/assets/fullcalendar-3.9.0/lib/moment.min.js';
           // $assets->addJs( $js, 300, false, 'defer' ); //, {'priority':500, 'loading':'defer'}
@@ -134,8 +134,8 @@ class PhotonEventPlugin extends Plugin
           $assets->addJs($js, 100, false, 'defer', 'photon-plugins' );
 
 
-        }
-      }
+        // }
+      // }
     }
 
 }
