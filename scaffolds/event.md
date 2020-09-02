@@ -11,12 +11,10 @@ title: ${title}
 subtitle: ${subtitle}
 date: ${post_date}
 author: ${author}
-sets:
-    default:
-        name: ${collection_name}
-        showCount: true
-        showMenu: true
 content:
+    title: ${collection_name}
+    showCount: true
+    showMenu: true
     items: '@self.children'
 taxonomy:
     category: 
