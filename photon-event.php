@@ -81,7 +81,7 @@ class PhotonEventPlugin extends Plugin
 
       // styles
       $css = 'plugin://photon-event/assets/event.css';
-      $assets->addCss( $css, 100, false, 'photon-plugins' );
+      $assets->addCss( $css, 100, 'pipeline', 'photon-plugins' );
       
       // only load the vars if this datatype page
       if ($page->template() == 'event')
@@ -93,9 +93,9 @@ class PhotonEventPlugin extends Plugin
 
       // styles
       $css = 'plugin://photon-event/assets/fc-photon.css';
-      $assets->addCss( $css, 300 );
+      $assets->addCss( $css, 300, false);
       $css = 'plugin://photon-event/assets/calendar.css';
-      $assets->addCss( $css, 100, false, 'photon-plugins' );
+      $assets->addCss( $css, 100, 'pipeline', 'photon-plugins' );
       
       if ($page->template() == 'calendar')
       {
