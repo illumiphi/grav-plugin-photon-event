@@ -20,3 +20,5 @@ PHOTON:
             _label: Geo Coordinates
             latitude: Latitude
             longitude: Longitude
+  calendar:
+    _label: Details

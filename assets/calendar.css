@@ -17,6 +17,11 @@ article.calendar > figure .fc-event-container a:hover {
   color: var(--color-2);
   background: var(--color-2-lighter);
 }
+article.calendar.showcase {
+  grid-template-areas: " header header " " content collection ";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+}
 
 /* templates/calendar *****************************/
 body.calendar #calendar {

@@ -4,11 +4,6 @@
 
 article.calendar {
 
-  // --article-color: var(--color-fg);
-  // --article-bg: var(--color-bg);
-  //
-  // --article-hover-color: var(--color-bg);
-  // --article-hover-bg: var(--color-fg);
   > figure {
     background: white;
     width: 100%;
@@ -26,6 +21,14 @@ article.calendar {
         background: var(--color-2-lighter);
       }
     }
+  }
+
+  &.showcase {
+    grid-template-areas: 
+      " header header " 
+      " content collection ";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
 
   }
 }
