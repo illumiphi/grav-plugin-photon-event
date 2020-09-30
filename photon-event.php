@@ -93,7 +93,7 @@ class PhotonEventPlugin extends Plugin
 
       // styles
       $css = 'plugin://photon-event/assets/fc-photon.css';
-      $assets->addCss( $css, 300, false);
+      $assets->addCss( $css, 300, 'pipeline', 'photon-plugins' );
       $css = 'plugin://photon-event/assets/calendar.css';
       $assets->addCss( $css, 100, 'pipeline', 'photon-plugins' );
       
