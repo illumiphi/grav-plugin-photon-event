@@ -1,5 +1,5 @@
 title: Event
-@extends:
+'@extends':
     type: article
     context: blueprints://pages
 
@@ -56,39 +56,39 @@ form:
 
                   header.data.event.address.streetAddress:
                     type: text
-                    help: The street address. For example: 123 Main St.
+                    help: 'The street address. For example: 123 Main St.'
                     label: PHOTON.event.address.streetAddress
 
                   header.data.event.address.postOfficeBoxNumber:
                     type: text
-                    help: The PO box. For example: 4444.
+                    help: 'The PO box. For example: 4444.'
                     label: PHOTON.event.address.postOfficeBoxNumber
                     size: small
 
                   header.data.event.address.addressLocality:
                     type: text
-                    help: The city or locality. For example: Portland.
+                    help: 'The city or locality. For example: Portland.'
                     label: PHOTON.event.address.addressLocality
                     # default: Waldport
                     size: medium
 
                   header.data.event.address.addressRegion:
                     type: text
-                    help: The state or region. For example: OR.
+                    help: 'The state or region. For example: OR.'
                     label: PHOTON.event.address.addressRegion
                     default: OR
                     size: small
 
                   header.data.event.address.postalCode:
                     type: text
-                    help: The zip or postal code. For example: 97498.
+                    help: 'The zip or postal code. For example: 97498.'
                     label: PHOTON.event.address.postalCode
                     # default: 97394
                     size: small
 
                   header.data.event.address.addressCountry:
                     type: text
-                    help: The country or code. For example: US.
+                    help: 'The country or code. For example: US.'
                     label: PHOTON.event.address.addressCountry
                     default: US
                     size: small

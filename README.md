@@ -1,39 +1,190 @@
+photon PLATFORM
+
+
 # photon ✴ Event
-## DATATYPE plugin
+ - enabled
+ - built_in_css
+ - built_in_js
+ - notes
 
-**This README.md file should be modified to describe the features, installation, configuration, and general usage of this plugin.**
+# blueprints
 
-The **Event** Plugin is for [Grav CMS](http://github.com/getgrav/grav). structure, style and logic for Event and Calendar content
+```sh
+blueprints
+├── calendar.yaml
+└── event.yaml
+```
+2 files found
+
+- Event
+  event.yaml
+  extends: article
+  fields:
+  - header.data.event
+
+- Calendar
+  calendar.yaml
+  extends: article
+  fields:
+  - header.data.calendar
+
+# templates
+
+```sh
+templates
+├── _articles
+│   ├── _block
+│   │   ├── calendar_collection.html.twig
+│   │   ├── calendar_figure.html.twig
+│   │   ├── event_data.html.twig
+│   │   ├── event_header_excerpt.html.twig
+│   │   └── event_header.html.twig
+│   ├── calendar-showcase.html.twig
+│   ├── event-excerpt.html.twig
+│   └── event.html.twig
+├── _json-ld
+│   ├── calendar.html.twig
+│   └── event.html.twig
+├── partials
+│   ├── event_item.html.twig
+│   ├── event_meta.html.twig
+│   └── events_sidebar.html.twig
+├── calendar.html.twig
+└── event.html.twig
+```
+
+# scss
+
+```sh
+scss
+├── articles
+│   ├── _calendar.scss
+│   └── _event.scss
+├── templates
+│   ├── _calendar.scss
+│   └── _event.scss
+├── calendar.scss
+└── event.scss
+```
+
+# assets
+
+```sh
+assets
+├── fullcalendar-5.2.0
+│   ├── lib
+│   │   ├── locales
+│   │   │   ├── af.js
+│   │   │   ├── ar-dz.js
+│   │   │   ├── ar.js
+│   │   │   ├── ar-kw.js
+│   │   │   ├── ar-ly.js
+│   │   │   ├── ar-ma.js
+│   │   │   ├── ar-sa.js
+│   │   │   ├── ar-tn.js
+│   │   │   ├── az.js
+│   │   │   ├── bg.js
+│   │   │   ├── bs.js
+│   │   │   ├── ca.js
+│   │   │   ├── cs.js
+│   │   │   ├── da.js
+│   │   │   ├── de.js
+│   │   │   ├── el.js
+│   │   │   ├── en-au.js
+│   │   │   ├── en-gb.js
+│   │   │   ├── en-nz.js
+│   │   │   ├── es.js
+│   │   │   ├── es-us.js
+│   │   │   ├── et.js
+│   │   │   ├── eu.js
+│   │   │   ├── fa.js
+│   │   │   ├── fi.js
+│   │   │   ├── fr-ca.js
+│   │   │   ├── fr-ch.js
+│   │   │   ├── fr.js
+│   │   │   ├── gl.js
+│   │   │   ├── he.js
+│   │   │   ├── hi.js
+│   │   │   ├── hr.js
+│   │   │   ├── hu.js
+│   │   │   ├── id.js
+│   │   │   ├── is.js
+│   │   │   ├── it.js
+│   │   │   ├── ja.js
+│   │   │   ├── ka.js
+│   │   │   ├── kk.js
+│   │   │   ├── ko.js
+│   │   │   ├── lb.js
+│   │   │   ├── lt.js
+│   │   │   ├── lv.js
+│   │   │   ├── mk.js
+│   │   │   ├── ms.js
+│   │   │   ├── nb.js
+│   │   │   ├── ne.js
+│   │   │   ├── nl.js
+│   │   │   ├── nn.js
+│   │   │   ├── pl.js
+│   │   │   ├── pt-br.js
+│   │   │   ├── pt.js
+│   │   │   ├── ro.js
+│   │   │   ├── ru.js
+│   │   │   ├── sk.js
+│   │   │   ├── sl.js
+│   │   │   ├── sq.js
+│   │   │   ├── sr-cyrl.js
+│   │   │   ├── sr.js
+│   │   │   ├── sv.js
+│   │   │   ├── th.js
+│   │   │   ├── tr.js
+│   │   │   ├── ug.js
+│   │   │   ├── uk.js
+│   │   │   ├── uz.js
+│   │   │   ├── vi.js
+│   │   │   ├── zh-cn.js
+│   │   │   └── zh-tw.js
+│   │   ├── locales-all.js
+│   │   ├── locales-all.min.js
+│   │   ├── main.css
+│   │   ├── main.js
+│   │   ├── main.min.css
+│   │   └── main.min.js
+│   ├── LICENSE.txt
+│   └── README.md
+├── calendar.css
+├── calendar.css.map
+├── calendar.js
+├── event.css
+├── event.css.map
+├── event.js
+└── fc-photon.css
+```
+
+# languages
+
+```sh
+languages
+└── en.yaml
+```
+
+# scaffolds
+
+```sh
+scaffolds
+└── event.md
+```
+
+copyright &copy; 2020
+
 
 ## Installation
 
-Installing the Event plugin can be done in one of two ways. The GPM (Grav Package Manager) installation method enables you to quickly and easily install the plugin with a simple terminal command, while the manual method enables you to do so via a zip file.
+- all photon plugins are installed as git submodules. More on that later.
 
-### GPM Installation (Preferred)
 
-The simplest way to install this plugin is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm) through your system's terminal (also called the command line).  From the root of your Grav install type:
-
-    bin/gpm install event
-
-This will install the Event plugin into your `/user/plugins` directory within Grav. Its files can be found under `/your/site/grav/user/plugins/event`.
-
-### Manual Installation
-
-To install this plugin, just download the zip version of this repository and unzip it under `/your/site/grav/user/plugins`. Then, rename the folder to `event`. You can find these files on [GitHub](https://github.com/i-am-phi/grav-plugin-event) or via [GetGrav.org](http://getgrav.org/downloads/plugins#extras).
-
-You should now have all the plugin files under
-
-    /your/site/grav/user/plugins/event
-
-> NOTE: This plugin is a modular component for Grav which requires [Grav](http://github.com/getgrav/grav) and the [Error](https://github.com/getgrav/grav-plugin-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) to operate.
-
-### Admin Plugin
-
-If you use the admin plugin, you can install directly through the admin plugin by browsing the `Plugins` tab and clicking on the `Add` button.
 
 ## Configuration
 
-Before configuring this plugin, you should copy the `user/plugins/event/event.yaml` to `user/config/plugins/event.yaml` and only edit that copy.
+Before configuring this plugin, you should copy the `user/plugins/photon-event/photon-event.yaml` to `user/config/plugins/photon-event.yaml` and only edit that copy.
 
 Here is the default configuration and an explanation of available options:
 
@@ -41,15 +192,14 @@ Here is the default configuration and an explanation of available options:
 enabled: true
 ```
 
-Note that if you use the admin plugin, a file with your configuration, and named event.yaml will be saved in the `user/config/plugins/` folder once the configuration is saved in the admin.
+Note that if you use the admin plugin, a file with your configuration, and named photon-event.yaml will be saved in the `user/config/plugins/` folder once the configuration is saved in the admin.
 
 ## Usage
 
-**Describe how to use the plugin.**
+Select template type when creating a new page
 
 ## Credits
 
-**Did you incorporate third-party code? Want to thank somebody?**
 
 ## To Do
 
