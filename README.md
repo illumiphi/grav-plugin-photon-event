@@ -2,6 +2,14 @@ photon PLATFORM
 
 
 # photon ✴ Event
+
+## 0.1.0
+> structure, style and logic for Event and Calendar content
+
+# configuration
+blueprints.yanl
+
+fields:
  - enabled
  - built_in_css
  - built_in_js
