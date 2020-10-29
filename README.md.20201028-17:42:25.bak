@@ -5,15 +5,9 @@ photon PLATFORM
 
 ## 0.1.0
 > structure, style and logic for Event and Calendar content
-- [configuration](#configuration)
-- [templates](#templates)
-- [scaffolds](#scaffolds)
-- [scss](#scss)
-- [assets](#assets)
-- [languages](#languages)
 
 # configuration
-blueprints.yaml
+blueprints.yanl
 
 fields:
  - enabled
@@ -21,12 +15,26 @@ fields:
  - built_in_js
  - notes
 
-Before configuring this plugin, you should copy the `user/plugins/photon-event/photon-event.yaml` to `user/config/plugins/photon-event.yaml` and only edit that copy.
+# blueprints
 
-Here is the default configuration and an explanation of available options:
+```sh
+blueprints
+├── calendar.yaml
+└── event.yaml
+```
+2 files found
 
-Note that if you use the admin plugin, a file with your configuration, and named photon-event.yaml will be saved in the `user/config/plugins/` folder once the configuration is saved in the admin.
+- Event
+  event.yaml
+  extends: article
+  fields:
+  - header.data.event
 
+- Calendar
+  calendar.yaml
+  extends: article
+  fields:
+  - header.data.calendar
 
 # templates
 
@@ -51,13 +59,6 @@ templates
 │   └── events_sidebar.html.twig
 ├── calendar.html.twig
 └── event.html.twig
-```
-
-# scaffolds
-
-```sh
-scaffolds
-└── event.md
 ```
 
 # scss
@@ -173,6 +174,15 @@ languages
 └── en.yaml
 ```
 
+# scaffolds
+
+```sh
+scaffolds
+└── event.md
+```
+
+copyright &copy; 2020
+
 
 ## Installation
 
@@ -182,6 +192,15 @@ languages
 
 ## Configuration
 
+Before configuring this plugin, you should copy the `user/plugins/photon-event/photon-event.yaml` to `user/config/plugins/photon-event.yaml` and only edit that copy.
+
+Here is the default configuration and an explanation of available options:
+
+```yaml
+enabled: true
+```
+
+Note that if you use the admin plugin, a file with your configuration, and named photon-event.yaml will be saved in the `user/config/plugins/` folder once the configuration is saved in the admin.
 
 ## Usage
 
@@ -193,6 +212,3 @@ Select template type when creating a new page
 ## To Do
 
 - [ ] Future plans, if any
-
-
-copyright &copy; 2020
