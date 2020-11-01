@@ -32,7 +32,7 @@ Before configuring this plugin, you should copy the `user/plugins/photon-event/p
 
 Here is the default configuration and an explanation of available options:
 
-```
+```yaml
 enabled: true
 built_in_css: true
 built_in_js: true
