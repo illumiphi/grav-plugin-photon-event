@@ -5,7 +5,7 @@ author:
   name: phi ARCHITECT
   email: phi@photon-platform.net
 homepage: https://github.com/photon-platform/grav-plugin-photon-event
-docs: https://github.com/photon-platform/grav-plugin-photon-event/blob/develop/README.md
+docs: https://photon-platform.github.io/grav-plugin-photon-event/
 bugs: https://github.com/photon-platform/grav-plugin-photon-event/issues
 demo: https://photon-platform.net
 keywords: datatype, photon
