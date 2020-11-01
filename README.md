@@ -6,11 +6,11 @@
 # photon ✴ Event
 
 ## v0.1.0
-> structure, style and logic for Event and Calendar content
 
 ---
 
-![GitHub release](https://img.shields.io/github/v/tag/photon-platform/grav-theme-photon)
+
+> structure, style and logic for Event and Calendar content
 
 - [configuration](#configuration)
 - [templates](#templates)
