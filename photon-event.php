@@ -100,7 +100,7 @@ class PhotonEventPlugin extends Plugin
       if ($page->template() == 'calendar')
       {
         // scripts
-        $js = 'plugin://photon-event/assets/fullcalendar-5.2.0/lib/main.js';
+        $js = 'plugin://photon-event/assets/fullcalendar-5.5.0/lib/main.min.js';
         $assets->addJs( $js, 250, false, 'defer' );
         $js = 'plugin://photon-event/assets/calendar.js';
         $assets->addJs($js, 100, false, 'defer', 'photon-plugins' );

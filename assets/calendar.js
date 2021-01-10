@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
     events: events
   });
 
+  calendar.addEventSource( {
+    url: "/calendar/moon.ics",
+    format: "ics"
+  } )
+
   calendar.render();
 });
 
