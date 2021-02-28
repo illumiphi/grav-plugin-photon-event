@@ -16,10 +16,8 @@ content:
     items: '@self.children'
 taxonomy:
     category: 
-        - ${category}
+        - event
     tag: 
-        - ${tag}
-show_gallery: false
 data:
     event:
         '@type': Event
